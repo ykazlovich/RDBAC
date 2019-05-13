@@ -11,7 +11,7 @@ import java.util.Optional;
 public class ClientSerializer extends StdSerializer<Client> {
 
 
-    public ClientSerializer(Class<Client> t) {
+    public ClientSerializer(Class t) {
         super(t);
     }
 
