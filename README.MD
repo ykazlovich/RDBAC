@@ -1,1 +1,1 @@
-RDBAC - backend with Apache Cayenne ORM.
+RDBAC - backend with <a href="https://cayenne.apache.org/">Apache Cayenne</a> ORM.
