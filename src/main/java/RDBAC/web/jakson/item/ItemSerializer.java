@@ -10,12 +10,9 @@ import java.io.IOException;
 public class ItemSerializer extends StdSerializer<Item> {
 
     public ItemSerializer(){
-        this(null);
+        super(Item.class);
     }
 
-    public ItemSerializer(Class<Item> c){
-        super(c);
-    }
     @Override
     public void serialize(Item item, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
 

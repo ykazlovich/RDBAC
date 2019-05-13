@@ -6,13 +6,12 @@ import com.fasterxml.jackson.databind.SerializerProvider;
 import com.fasterxml.jackson.databind.ser.std.StdSerializer;
 
 import java.io.IOException;
-import java.util.Optional;
 
 public class ClientSerializer extends StdSerializer<Client> {
 
 
-    public ClientSerializer(Class t) {
-        super(t);
+    public ClientSerializer() {
+        super(Client.class);
     }
 
     @Override

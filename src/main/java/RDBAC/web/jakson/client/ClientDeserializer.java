@@ -13,10 +13,7 @@ import java.io.IOException;
 public class ClientDeserializer extends StdDeserializer<Client> {
 
     public ClientDeserializer(){
-        this(null);
-    }
-    public ClientDeserializer(Class c){
-        super(c);
+        super(Client.class);
     }
 
     @Override
