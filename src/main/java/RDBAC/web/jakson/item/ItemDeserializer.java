@@ -6,17 +6,12 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.deser.std.StdDeserializer;
-import org.apache.cayenne.ObjectId;
 
 import java.io.IOException;
 
 public class ItemDeserializer extends StdDeserializer<Item> {
     public ItemDeserializer() {
-        this(null);
-    }
-
-    public ItemDeserializer(Class<Item> vc) {
-        super(vc);
+        super(Item.class);
     }
 
     @Override
