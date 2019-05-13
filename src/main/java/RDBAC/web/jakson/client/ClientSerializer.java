@@ -10,9 +10,6 @@ import java.util.Optional;
 
 public class ClientSerializer extends StdSerializer<Client> {
 
-    public ClientSerializer(){
-        this(null);
-    }
 
     public ClientSerializer(Class<Client> t) {
         super(t);
