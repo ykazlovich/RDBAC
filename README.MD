@@ -6,8 +6,8 @@ Using:
 * JDK 11.0.3
 * Maven 3.3.9 for build project
 * Spring Web MVC 5.1.6
-* JUnit 5
-* Jakson with custom serializer and deserializer
+* JUnit 4
+* Jackson with custom serializer and deserializer
 * PostgreSQL 11.
 
 
