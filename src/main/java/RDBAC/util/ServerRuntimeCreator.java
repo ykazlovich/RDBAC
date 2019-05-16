@@ -9,7 +9,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
 
 @Configuration
-@PropertySource(value = "classpath:db.properties")
+@PropertySource(value = "classpath:db/db.properties")
 public class ServerRuntimeCreator {
 
     @Autowired
@@ -18,7 +18,7 @@ public class ServerRuntimeCreator {
     @Bean
     public ServerRuntime getServerRuntime() {
         return ServerRuntime.builder()
-                .addConfig("cayenne-project.xml")
+                .addConfig("db/cayenne-project.xml")
                 .dataSource(
                         DataSourceBuilder
                                 .url(environment.getProperty("db.url"))

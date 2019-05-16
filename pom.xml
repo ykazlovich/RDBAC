@@ -42,7 +42,7 @@
                     <execution>
                         <id>cbdimport</id>
                         <configuration>
-                            <map>${project.basedir}/src/main/resources/datamap.map.xml</map>
+                            <map>src/main/resources/db/datamap.map.xml</map>
                             <dataSource>
                                 <driver>org.postgresql.Driver</driver>
                                 <url>jdbc:postgresql://localhost:5432/RDBA</url>

@@ -14,7 +14,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration({"classpath:/spring.xml", "classpath:/spring-db-test.xml"})
+@ContextConfiguration({"classpath:/spring.xml", "classpath:/db/spring-db-test.xml"})
 @DirtiesContext(methodMode = DirtiesContext.MethodMode.BEFORE_METHOD)
 class ItemRepositoryImplTest {
 
@@ -30,7 +30,7 @@ class ItemRepositoryImplTest {
     @Test
     void getAll() {
         List<Item> items = repository.getAll();
-        //assertIterableEquals(items, ItemTestData.itemsCheckList);
+        assertIterableEquals(items, ItemTestData.itemsCheckList);
     }
 
     @Test
