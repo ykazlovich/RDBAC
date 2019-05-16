@@ -3,7 +3,6 @@ package RDBAC.model;
 import RDBAC.model.auto._Order;
 import org.apache.cayenne.Cayenne;
 import org.apache.cayenne.ObjectId;
-import org.apache.cayenne.PersistenceState;
 
 public class Order extends _Order {
 
@@ -30,11 +29,8 @@ public class Order extends _Order {
     private static final long serialVersionUID = 1L;
 
     public Integer getOrderId() {
-//        return (getObjectId() != null && !getObjectId().isTemporary())
-//                ? (Integer) getObjectId().getIdSnapshot().get(ID_PK_COLUMN)
-//                : null;
-
         return Cayenne.intPKForObject(this);
+
 
     }
 

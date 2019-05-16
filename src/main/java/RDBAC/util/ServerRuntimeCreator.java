@@ -1,4 +1,4 @@
-package RDBAC;
+package RDBAC.util;
 
 import org.apache.cayenne.configuration.server.ServerRuntime;
 import org.apache.cayenne.datasource.DataSourceBuilder;
