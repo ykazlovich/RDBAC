@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import static org.junit.jupiter.api.Assertions.*;
 
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration("/spring.xml")
+@ContextConfiguration({"/spring.xml", "/spring-db.xml"})
 class ItemRestControllerTest {
 
     @Autowired

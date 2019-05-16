@@ -8,6 +8,7 @@ import org.apache.cayenne.ObjectContext;
 import org.apache.cayenne.PersistenceState;
 import org.apache.cayenne.configuration.server.ServerRuntime;
 import org.apache.cayenne.query.ObjectSelect;
+import org.apache.cayenne.query.PrefetchTreeNode;
 import org.apache.cayenne.query.SelectById;
 import org.apache.cayenne.query.SelectQuery;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,15 +29,11 @@ public class OrderRepositoryImpl implements OrderRepository {
     public List<Order> getAll() {
         ObjectContext context = serverRuntime.newContext();
 
-        List<Order> orders = ObjectSelect.query(Order.class).select(context);
-
-        /*Temporary solution. Read about ordering by PK...
-        Another way(lose lazy loading):
-        SQLSelect<Order> select = SQLSelect.query( Order.class,"SELECT * FROM public.Order ORDER BY id DESC");
-        List<Order> orderList = context.select(select);
-
-         */
-
+        List<Order> orders = ObjectSelect.
+                query(Order.class).
+                prefetch(Order.CLIENT1.joint()).
+                prefetch(Order.ITEM.joint()).
+                select(context);
 
         return orders;
     }
@@ -44,22 +41,16 @@ public class OrderRepositoryImpl implements OrderRepository {
     @Override
     public Order get(int id) {
         ObjectContext context = serverRuntime.newContext();
-        Order order = Cayenne.objectForPK(context, Order.class, id);
-        Order ordert = SelectById.query(Order.class, id).prefetch(Order.ITEM.joint()).selectFirst(context);
-        Cayenne.intPKForObject(order);
-        Order order2 = SelectById.query(Order.class, id).selectFirst(context);
-        return order2;
+        Order order = SelectById.query(Order.class, id).selectFirst(context);
+        return order;
     }
 
     @Override
     public Order save(Order order) {
         ObjectContext context = serverRuntime.newContext();
-        //Item item = Cayenne.objectForPK(context, Item.class, order.getTempItemId());
-        Item item = SelectById.query(Item.class, order.getTempItemId()).selectOne(context);
+        Item item = Cayenne.objectForPK(context, Item.class, order.getTempItemId());
 
-
-        System.out.println(PersistenceState.persistenceStateName(item.getPersistenceState()));
-        Client client = Cayenne.objectForPK(context, Client.class, order.getTempClientId());
+        Client client = Cayenne.objectForPK(context, Client.class, order.getTempItemId());
         order.setItem(item);
         order.setClient1(client);
         LocalDateTime date = LocalDateTime.now();

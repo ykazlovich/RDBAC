@@ -43,12 +43,6 @@ public class ClientRepositoryImpl implements ClientRepository {
             context.commitChanges();
             return old;
         } else {
-            //System.out.println(client);
-            //client.setPersistenceState(1);
-            //Client client1 = new Client();
-            //client1.setObjectId(new ObjectId("Client", "id", 61));
-            //client1.setPhone("dsf");
-
             context.registerNewObject(client);
             context.commitChanges();
             return client;

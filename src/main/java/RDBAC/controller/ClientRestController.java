@@ -32,8 +32,6 @@ public class ClientRestController {
 
     @PostMapping(path = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Client> save(@RequestBody Client client){
-        System.out.println("controller save");
-        System.out.println(client);
         Client save = service.save(client);
         ResponseEntity<Client> o = new ResponseEntity<>(save, HttpStatus.CREATED);
         return o;

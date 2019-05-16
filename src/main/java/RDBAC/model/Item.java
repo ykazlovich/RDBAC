@@ -2,18 +2,26 @@ package RDBAC.model;
 
 import RDBAC.model.auto._Item;
 import org.apache.cayenne.Cayenne;
+import org.apache.cayenne.ObjectId;
 
 public class Item extends _Item {
 
     private static final long serialVersionUID = 1L;
 
     public int getId() {
-        return (getObjectId() != null && !getObjectId().isTemporary())
-                ? (Integer) getObjectId().getIdSnapshot().get(ID_PK_COLUMN) : 0;
+        return Cayenne.intPKForObject(this);
     }
     public boolean isNew(){
         return this.getPersistenceState() == 1;
+    }
 
+    public Item(int id, String name, String serialno){
+        this.setObjectId(new ObjectId("Client", "pk", id));
+        super.setIname(name);
+        super.setSerialno(serialno);
+    }
+
+    public Item() {
     }
 
     @Override
@@ -23,4 +31,13 @@ public class Item extends _Item {
         return sb.toString();
     }
 
+    @Override
+    public boolean equals(Object obj) {
+        if(obj == null) return false;
+        Item item = (Item) obj;
+        if(item.getId() != this.getId()) return false;
+        if (!item.getIname().equals(this.getIname())) return false;
+        if (!item.getSerialno().equals(this.getSerialno())) return false;
+        return true;
+    }
 }
