@@ -14,4 +14,4 @@ Using:
 
 
 Frontside:
-<a href="https://github.com/ykazlovich/RDBA-web">RDBA-web</a> - with React/Boostrap
+<a href="https://github.com/ykazlovich/RDBA-web">RDBA-web</a> - with React/Boostrap.
