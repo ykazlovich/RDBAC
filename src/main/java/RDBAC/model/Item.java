@@ -16,7 +16,7 @@ public class Item extends _Item {
     }
 
     public Item(int id, String name, String serialno){
-        this.setObjectId(new ObjectId("Client", "pk", id));
+        this.setObjectId(new ObjectId("Item", "pk", id));
         super.setIname(name);
         super.setSerialno(serialno);
     }
@@ -24,10 +24,14 @@ public class Item extends _Item {
     public Item() {
     }
 
+    public void setId(int id){
+        this.setObjectId(new ObjectId("Item", "pk", id));
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("Item=").append(Cayenne.intPKForObject(this)).append(". Model=").append(this.getIname()).append(". SerialNumber=").append(this.getSerialno());
+        sb.append("Item ").append("model=").append(this.getIname()).append(". SerialNumber=").append(this.getSerialno());
         return sb.toString();
     }
 
