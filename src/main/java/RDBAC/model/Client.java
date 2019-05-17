@@ -2,12 +2,16 @@ package RDBAC.model;
 
 import RDBAC.model.auto._Client;
 import org.apache.cayenne.Cayenne;
+import org.apache.cayenne.ObjectId;
+
+import java.util.Objects;
 
 public class Client extends _Client {
 
     private static final long serialVersionUID = 1L;
 
     public Integer getId() {
+        //if  (this.getPersistenceState() == 1 || this.getPersistenceState() == 2) return -1;
         return Cayenne.intPKForObject(this);
     }
 
@@ -17,13 +21,30 @@ public class Client extends _Client {
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb
-                .append(". Name=")
-                .append(this.getName())
-                .append(". Phone=")
-                .append(this.getPhone());
-        return sb.toString();
+        return "Client{"+
+                "Name=" + this.getName() +
+                ". Phone=" + this.getPhone();
+        }
+
+    public void setId(int id){
+        this.setObjectId(new ObjectId("Client", "id", id));
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(
+                this.getId(),
+                this.getName(),
+                this.getPhone());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) return true;
+        if (obj == null || obj.getClass() != this.getClass()) return false;
+        Client client = (Client) obj;
+        return Objects.equals(this.getId(), client.getId()) &&
+                Objects.equals(this.getName(), client.getName()) &&
+                Objects.equals(this.getPhone(), client.getPhone());
+    }
 }

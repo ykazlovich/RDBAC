@@ -17,7 +17,7 @@ public class OrderSerializer extends StdSerializer<Order> {
     public void serialize(Order order, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
 
         jsonGenerator.writeStartObject();
-        jsonGenerator.writeNumberField("id", order.getOrderId());
+        jsonGenerator.writeNumberField("id", order.getId());
         jsonGenerator.writeStringField("date", order.getDate().toString());
         jsonGenerator.writeObjectField("client", order.getClient1());
         jsonGenerator.writeObjectField("item", order.getItem());

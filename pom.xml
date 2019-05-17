@@ -42,7 +42,7 @@
                     <execution>
                         <id>cbdimport</id>
                         <configuration>
-                            <map>src/main/resources/db/datamap.map.xml</map>
+                            <map>src/main/resources/datamap.map.xml</map>
                             <dataSource>
                                 <driver>org.postgresql.Driver</driver>
                                 <url>jdbc:postgresql://localhost:5432/RDBA</url>
@@ -116,6 +116,14 @@
             <artifactId>slf4j-simple</artifactId>
             <version>1.7.25</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.assertj</groupId>
+            <artifactId>assertj-core</artifactId>
+            <version>3.12.2</version>
+            <scope>test</scope>
+        </dependency>
+
 
         <dependency>
             <groupId>org.junit.jupiter</groupId>

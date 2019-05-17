@@ -2,10 +2,6 @@ package RDBAC;
 
 
 import RDBAC.model.Order;
-import org.apache.cayenne.ObjectContext;
-import org.apache.cayenne.configuration.server.ServerRuntime;
-import org.apache.cayenne.query.ObjectSelect;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
@@ -23,7 +19,7 @@ public class Main {
 //        System.out.println(ObjectSelect.query(Order.class).select(objectContext));
         Order order = new Order();
 
-        System.out.println(order.getOrderId());
+        System.out.println(order.getId());
 
 
     }

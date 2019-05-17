@@ -50,7 +50,7 @@ public class OrderRepositoryImpl implements OrderRepository {
         ObjectContext context = serverRuntime.newContext();
         Item item = Cayenne.objectForPK(context, Item.class, order.getTempItemId());
 
-        Client client = Cayenne.objectForPK(context, Client.class, order.getTempItemId());
+        Client client = Cayenne.objectForPK(context, Client.class, order.getTempClientId());
         order.setItem(item);
         order.setClient1(client);
         LocalDateTime date = LocalDateTime.now();

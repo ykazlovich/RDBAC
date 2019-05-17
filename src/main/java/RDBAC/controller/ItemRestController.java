@@ -28,7 +28,6 @@ public class ItemRestController {
 
     @PostMapping(path = "/")
     public Item save(@RequestBody Item item){
-        System.out.println("postmapping works");
         return repository.save(item);
     }
 

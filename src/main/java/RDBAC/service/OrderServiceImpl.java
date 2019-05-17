@@ -21,7 +21,7 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public List<Order> getAll() {
         List<Order> orders = repository.getAll();
-        orders.sort((x, y) -> x.getOrderId() > y.getOrderId() ? -1 : 0);
+        orders.sort((x, y) -> x.getId() > y.getId() ? -1 : 0);
         return orders;
     }
 

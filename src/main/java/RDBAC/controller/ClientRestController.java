@@ -39,8 +39,6 @@ public class ClientRestController {
 
     @PutMapping(path = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Client> update(@RequestBody Client client){
-        System.out.println("postmapping works");
-        System.out.println(client);
         Client updated = service.save(client);
         ResponseEntity<Client> o = new ResponseEntity<>(updated, HttpStatus.OK);
         return o;

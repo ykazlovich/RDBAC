@@ -11,10 +11,12 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
 
+import static org.assertj.core.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.*;
 
+
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration({"classpath:/spring.xml", "classpath:/db/spring-db-test.xml"})
+@ContextConfiguration({"classpath:/spring.xml", "classpath:/spring-db-test.xml"})
 @DirtiesContext(methodMode = DirtiesContext.MethodMode.BEFORE_METHOD)
 class ItemRepositoryImplTest {
 
@@ -23,8 +25,10 @@ class ItemRepositoryImplTest {
 
     @Test
     void get() {
+        Item itemCheck1 = new Item(1, "WD10EARX", "WX12018319423");
         Item item = repository.get(1);
-        assertEquals(item, ItemTestData.itemCheck1);
+        assertThat(item).isEqualTo(ItemTestData.itemCheck1);
+
     }
 
     @Test

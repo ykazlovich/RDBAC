@@ -30,7 +30,6 @@ public class OrderRestControllerImpl {
 
     @PostMapping(path = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Order> save(@RequestBody Order order){
-        System.out.println(order.getDescription());
         Order addedOrder = service.save(order);
         ResponseEntity<Order> o = new ResponseEntity<>(addedOrder, HttpStatus.CREATED);
         return o;

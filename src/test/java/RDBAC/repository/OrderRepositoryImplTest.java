@@ -1,5 +1,6 @@
 package RDBAC.repository;
 
+import RDBAC.ItemTestData;
 import RDBAC.model.Order;
 import org.apache.cayenne.PersistenceState;
 import org.junit.jupiter.api.Test;
@@ -8,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 @ExtendWith(SpringExtension.class)
-@ContextConfiguration(value = {"/spring.xml", "/db/spring-db-test.xml"})
+@ContextConfiguration(value = {"/spring.xml", "/spring-db-test.xml"})
 class OrderRepositoryImplTest {
 
     @Autowired
@@ -18,6 +21,7 @@ class OrderRepositoryImplTest {
     @Test
     void getById() {
         Order order = repository.get(1);
+
 
     }
 
@@ -28,15 +32,4 @@ class OrderRepositoryImplTest {
         System.out.println(repository.getAll());
     }
 
-
-
-    @Test
-    void t(){
-
-    }
-
-    @Test
-    void save() {
-
-    }
 }
