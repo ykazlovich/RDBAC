@@ -10,7 +10,7 @@ Using:
 * Jackson with custom serializer and deserializer
 * PostgreSQL 11.
 
-
+SQL script for init db [here](https://github.com/ykazlovich/RDBAC/blob/master/src/main/resources/database.sql)
 
 
 Frontside:
