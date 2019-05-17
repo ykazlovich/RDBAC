@@ -10,7 +10,8 @@ Using:
 * Jackson with custom serializer and deserializer
 * PostgreSQL 11.
 
-SQL script for init db [here](https://github.com/ykazlovich/RDBAC/blob/master/src/main/resources/db/database.sql)
+SQL script for init db [here](https://github.com/ykazlovich/RDBAC/blob/master/src/main/resources/db/database.sql).
+You need to change db password in config files
 
 
 Frontside:
