@@ -30,7 +30,7 @@ class ItemRepositoryImplTest {
     @Test
     void getAll() {
         List<Item> items = repository.getAll();
-        //assertIterableEquals(items, ItemTestData.itemsCheckList);
+        assertIterableEquals(items, ItemTestData.itemsCheckList);
     }
 
     @Test

@@ -5,18 +5,13 @@ import RDBAC.model.Item;
 import RDBAC.model.Order;
 import org.apache.cayenne.Cayenne;
 import org.apache.cayenne.ObjectContext;
-import org.apache.cayenne.PersistenceState;
 import org.apache.cayenne.configuration.server.ServerRuntime;
 import org.apache.cayenne.query.ObjectSelect;
-import org.apache.cayenne.query.PrefetchTreeNode;
 import org.apache.cayenne.query.SelectById;
-import org.apache.cayenne.query.SelectQuery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.Collections;
 import java.util.List;
 
 @Repository
@@ -28,13 +23,11 @@ public class OrderRepositoryImpl implements OrderRepository {
     @Override
     public List<Order> getAll() {
         ObjectContext context = serverRuntime.newContext();
-
         List<Order> orders = ObjectSelect.
                 query(Order.class).
                 prefetch(Order.CLIENT1.joint()).
                 prefetch(Order.ITEM.joint()).
                 select(context);
-
         return orders;
     }
 
