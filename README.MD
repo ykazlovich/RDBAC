@@ -17,5 +17,4 @@ You need to change db password in config files
 Frontside:
 <a href="https://github.com/ykazlovich/RDBA-web">RDBA-web</a> - with React/Boostrap.
 
-![index image](https://i.ibb.co/BnZhtVc/index.png)
-![new task page](https://i.ibb.co/jTsrDks/add-task.png)
+
