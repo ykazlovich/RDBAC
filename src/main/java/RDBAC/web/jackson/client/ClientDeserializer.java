@@ -1,4 +1,4 @@
-package RDBAC.web.jakson.client;
+package RDBAC.web.jackson.client;
 
 import RDBAC.model.Client;
 import com.fasterxml.jackson.core.JsonParser;

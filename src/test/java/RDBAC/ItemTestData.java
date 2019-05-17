@@ -2,7 +2,7 @@ package RDBAC;
 
 
 import RDBAC.model.Item;
-import RDBAC.web.jakson.JacksonObjectMapper;
+import RDBAC.web.jackson.JacksonObjectMapper;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import org.springframework.test.web.servlet.ResultMatcher;
 

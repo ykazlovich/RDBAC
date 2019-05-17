@@ -7,7 +7,7 @@
 
     <context:component-scan base-package="RDBAC.controller"/>
 
-    <bean class="RDBAC.web.jakson.JacksonObjectMapper" id="objectMapper" factory-method="getMapper"/>
+    <bean class="RDBAC.web.jackson.JacksonObjectMapper" id="objectMapper" factory-method="getMapper"/>
 
     <mvc:annotation-driven>
         <mvc:message-converters>

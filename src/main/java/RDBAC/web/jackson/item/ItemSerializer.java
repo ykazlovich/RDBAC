@@ -1,4 +1,4 @@
-package RDBAC.web.jakson.item;
+package RDBAC.web.jackson.item;
 
 import RDBAC.model.Item;
 import com.fasterxml.jackson.core.JsonGenerator;

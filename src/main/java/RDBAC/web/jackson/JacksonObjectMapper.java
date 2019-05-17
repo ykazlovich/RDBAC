@@ -1,14 +1,14 @@
-package RDBAC.web.jakson;
+package RDBAC.web.jackson;
 
 import RDBAC.model.Client;
 import RDBAC.model.Item;
 import RDBAC.model.Order;
-import RDBAC.web.jakson.client.ClientDeserializer;
-import RDBAC.web.jakson.client.ClientSerializer;
-import RDBAC.web.jakson.item.ItemDeserializer;
-import RDBAC.web.jakson.item.ItemSerializer;
-import RDBAC.web.jakson.order.OrderDeserializer;
-import RDBAC.web.jakson.order.OrderSerializer;
+import RDBAC.web.jackson.client.ClientDeserializer;
+import RDBAC.web.jackson.client.ClientSerializer;
+import RDBAC.web.jackson.item.ItemDeserializer;
+import RDBAC.web.jackson.item.ItemSerializer;
+import RDBAC.web.jackson.order.OrderDeserializer;
+import RDBAC.web.jackson.order.OrderSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 

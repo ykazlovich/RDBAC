@@ -1,4 +1,4 @@
-package RDBAC.web.jakson.order;
+package RDBAC.web.jackson.order;
 
 import RDBAC.model.Order;
 import com.fasterxml.jackson.core.JsonParser;
