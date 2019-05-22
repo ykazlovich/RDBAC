@@ -25,6 +25,11 @@ public class ClientServiceImpl implements ClientService {
     }
 
     @Override
+    public List<Client> findByNameAndPhone(String search) {
+        return repository.findByNameAndPhone(search);
+    }
+
+    @Override
     public Client save(Client client) {
         return repository.save(client);
     }

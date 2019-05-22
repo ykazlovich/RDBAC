@@ -24,29 +24,33 @@ public class ClientRestController {
 
 
     @GetMapping(path = "/", produces = MediaType.APPLICATION_JSON_VALUE)
-    public List<Client> getAll(){
+    public List<Client> getAll() {
         return service.getAll();
     }
 
     @GetMapping(path = "/{id}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Client get(@PathVariable int id){
+    public Client get(@PathVariable int id) {
         return service.get(id);
     }
 
+    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
+    public List<Client> searchClientByNameAndPhone(@RequestParam(value = "search") String search) {
+        return service.findByNameAndPhone(search);
+    }
+
     @PostMapping(path = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Client> save(@RequestBody Client client){
+    public ResponseEntity<Client> save(@RequestBody Client client) {
         Client save = service.save(client);
         ResponseEntity<Client> o = new ResponseEntity<>(save, HttpStatus.CREATED);
         return o;
     }
 
     @PutMapping(path = "/", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Client> update(@RequestBody Client client){
+    public ResponseEntity<Client> update(@RequestBody Client client) {
         Client updated = service.save(client);
         ResponseEntity<Client> o = new ResponseEntity<>(updated, HttpStatus.OK);
         return o;
     }
-
 
 
 }
