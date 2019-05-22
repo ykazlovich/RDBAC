@@ -6,6 +6,7 @@ import org.apache.cayenne.ObjectId;
 import org.apache.cayenne.configuration.server.ServerRuntime;
 import org.apache.cayenne.query.ObjectSelect;
 import org.apache.cayenne.query.SelectById;
+import org.apache.cayenne.query.SortOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -26,6 +27,16 @@ public class ClientRepositoryImpl implements ClientRepository {
     }
 
     @Override
+    public List<Client> findByNameAndPhone(String search) {
+        ObjectContext context = serverRuntime.newContext();
+        return ObjectSelect
+                .query(Client.class)
+                .where(Client.NAME.upper().contains(search.toUpperCase()))
+                .or(Client.PHONE.contains(search))
+                .select(context);
+    }
+
+    @Override
     public List<Client> getAll() {
         ObjectContext context = serverRuntime.newContext();
         return ObjectSelect.query(Client.class).select(context);
@@ -35,7 +46,7 @@ public class ClientRepositoryImpl implements ClientRepository {
     public Client save(Client client) {
         ObjectContext context = serverRuntime.newContext();
 
-        if (!client.isNew()){
+        if (!client.isNew()) {
             Client old = SelectById.query(Client.class, client.getId()).selectFirst(context);
 
             old.setPhone(client.getPhone());

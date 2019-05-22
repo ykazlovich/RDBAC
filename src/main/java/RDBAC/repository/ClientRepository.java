@@ -8,5 +8,5 @@ public interface ClientRepository {
     Client get(int id);
     List<Client> getAll();
     Client save(Client client);
-
+    List<Client> findByNameAndPhone(String search);
 }
