@@ -23,6 +23,16 @@ public class ItemRepositoryImpl implements ItemRepository {
     }
 
     @Override
+    public List<Item> findByModelOrSerialNumber(String search) {
+        ObjectContext context = serverRuntime.newContext();
+        return ObjectSelect
+                .query(Item.class)
+                .where(Item.INAME.upper().contains(search.toUpperCase()))
+                .or(Item.SERIALNO.upper().contains(search.toUpperCase()))
+                .select(context);
+    }
+
+    @Override
     public List<Item> getAll() {
         ObjectContext context = serverRuntime.newContext();
         return ObjectSelect.query(Item.class).select(context);
