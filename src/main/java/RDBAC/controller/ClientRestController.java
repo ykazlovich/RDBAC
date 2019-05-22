@@ -13,9 +13,12 @@ import javax.print.attribute.standard.Media;
 import java.util.List;
 
 @RestController
-@RequestMapping(path = "/v1/clients")
+@RequestMapping(path = ClientRestController.REST_CLIENT_URL)
 @CrossOrigin
 public class ClientRestController {
+
+    final static String REST_CLIENT_URL = "/v1/clients";
+
     @Autowired
     private ClientService service;
 

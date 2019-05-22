@@ -9,9 +9,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/items")
+@RequestMapping(path = ItemRestController.REST_ITEM_URL)
 @CrossOrigin
 public class ItemRestController {
+
+    final static String REST_ITEM_URL = "/v1/clients";
 
     @Autowired
     private ItemRepository repository;
