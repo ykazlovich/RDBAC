@@ -13,7 +13,7 @@ import java.util.List;
 @CrossOrigin
 public class ItemRestController {
 
-    final static String REST_ITEM_URL = "/v1/clients";
+    final static String REST_ITEM_URL = "/v1/items";
 
     @Autowired
     private ItemRepository repository;
