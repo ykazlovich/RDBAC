@@ -11,9 +11,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/v1/orders")
+@RequestMapping(value = OrderRestControllerImpl.REST_ORDER_URL)
 @CrossOrigin
 public class OrderRestControllerImpl {
+
+    static final String REST_ORDER_URL = "/v1/orders";
 
     @Autowired
     private OrderService service;
