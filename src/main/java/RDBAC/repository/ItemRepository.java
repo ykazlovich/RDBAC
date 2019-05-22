@@ -8,4 +8,5 @@ public interface ItemRepository {
     Item get(int id);
     List<Item> getAll();
     Item save(Item item);
+    List<Item> findByModelOrSerialNumber(String search);
 }
