@@ -14,6 +14,7 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <postgres.version>42.2.5</postgres.version>
+        <jackson.version>2.9.9</jackson.version>
     </properties>
 
     <build>
@@ -47,7 +48,7 @@
                                 <driver>org.postgresql.Driver</driver>
                                 <url>jdbc:postgresql://localhost:5432/RDBA</url>
                                 <username>postgres</username>
-                                <password>vd39v23nDSvu239423nD1v238423</password>
+                                <password>39mDf9238kDfESDf239DNV1</password>
                             </dataSource>
                             <dbimport>
                                 <defaultPackage>RDBAC</defaultPackage>
@@ -142,17 +143,17 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.9.7</version>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-hibernate5</artifactId>
-            <version>2.9.7</version>
+            <version>${jackson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.datatype</groupId>
             <artifactId>jackson-datatype-jsr310</artifactId>
-            <version>2.9.7</version>
+            <version>${jackson.version}</version>
         </dependency>
 
         <dependency>
