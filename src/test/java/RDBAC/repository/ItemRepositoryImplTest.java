@@ -25,7 +25,6 @@ class ItemRepositoryImplTest {
 
     @Test
     void get() {
-        Item itemCheck1 = new Item(1, "WD10EARX", "WX12018319423");
         Item item = repository.get(1);
         assertThat(item).isEqualTo(ItemTestData.itemCheck1);
 
