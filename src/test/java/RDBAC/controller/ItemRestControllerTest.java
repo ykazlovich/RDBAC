@@ -38,7 +38,7 @@ class ItemRestControllerTest {
     void getById() throws Exception {
         mvc.perform(get("/v1/items/1"))
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8))
-                .andExpect(ItemTestData.contentJson(ItemTestData.itemCheck1));
+                .andExpect(ItemTestData.contentJson(ItemTestData.itemsCheckList.get(0)));
     }
 
     @Test
