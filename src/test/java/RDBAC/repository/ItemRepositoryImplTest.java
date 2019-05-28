@@ -26,7 +26,7 @@ class ItemRepositoryImplTest {
     @Test
     void get() {
         Item item = repository.get(1);
-        assertThat(item).isEqualTo(ItemTestData.itemCheck1);
+        assertThat(item).isEqualTo(ItemTestData.itemsCheckList.get(0));
 
     }
 
