@@ -10,6 +10,14 @@ public class Client extends _Client {
 
     private static final long serialVersionUID = 1L;
 
+    public Client() {
+    }
+    public Client(int id, String name, String phone){
+        this.setId(id);
+        this.setName(name);
+        this.setPhone(phone);
+    }
+
     public Integer getId() {
         //if  (this.getPersistenceState() == 1 || this.getPersistenceState() == 2) return -1;
         return Cayenne.intPKForObject(this);
