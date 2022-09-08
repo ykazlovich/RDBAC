@@ -13,7 +13,7 @@
         <cayenne.version>4.0.1</cayenne.version>
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
-        <postgres.version>42.2.5</postgres.version>
+        <postgres.version>42.4.1</postgres.version>
         <jackson.version>2.9.9</jackson.version>
     </properties>
 
